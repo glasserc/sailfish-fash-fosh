@@ -21,7 +21,8 @@ OTHER_FILES += qml/sailfish-fash-fosh.qml \
     rpm/sailfish-fash-fosh.yaml \
     sailfish-fash-fosh.desktop \
     qml/tictactoemodel.js \
-    qml/Space.qml
+    qml/Space.qml \
+    qml/TicTacToeBoard.qml
 
 HEADERS += \
     src/tictactoeboard.h

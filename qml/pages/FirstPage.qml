@@ -31,6 +31,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "../tictactoemodel.js" as TTTM
+import "../"
 
 Page {
     id: page
@@ -72,6 +73,9 @@ Page {
                     id: background
                     anchors.fill: parent
                 }
+                TicTacToeBoard {}
+
+
                 MouseArea {
                     anchors.fill: parent
                     onClicked: TTTM.currentGame.handleClick(mouse.x, mouse.y)
