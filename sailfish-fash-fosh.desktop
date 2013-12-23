@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+X-Nemo-Application-Type=silica-qt5
+Name=sailfish-fash-fosh
+Icon=sailfish-fash-fosh
+Exec=sailfish-fash-fosh
+
