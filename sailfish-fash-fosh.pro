@@ -10,7 +10,8 @@ TARGET = sailfish-fash-fosh
 
 CONFIG += sailfishapp
 
-SOURCES += src/sailfish-fash-fosh.cpp
+SOURCES += src/sailfish-fash-fosh.cpp \
+    src/tictactoeboard.cpp
 
 OTHER_FILES += qml/sailfish-fash-fosh.qml \
     qml/cover/CoverPage.qml \
@@ -19,4 +20,7 @@ OTHER_FILES += qml/sailfish-fash-fosh.qml \
     rpm/sailfish-fash-fosh.spec \
     rpm/sailfish-fash-fosh.yaml \
     sailfish-fash-fosh.desktop
+
+HEADERS += \
+    src/tictactoeboard.h
 
