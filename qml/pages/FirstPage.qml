@@ -30,7 +30,7 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-
+import "../tictactoemodel.js" as TTTM
 
 Page {
     id: page
@@ -42,8 +42,8 @@ Page {
         // PullDownMenu and PushUpMenu must be declared in SilicaFlickable, SilicaListView or SilicaGridView
         PullDownMenu {
             MenuItem {
-                text: "Show Page 2"
-                onClicked: pageStack.push(Qt.resolvedUrl("SecondPage.qml"))
+                text: "New game"
+                onClicked: TTTM.newGame()
             }
         }
 
@@ -54,17 +54,34 @@ Page {
         // of the page, followed by our content.
         Column {
             id: column
-
             width: page.width
             spacing: Theme.paddingLarge
             PageHeader {
-                title: "UI Template"
+                title: "Tic Tac Toe"
             }
+
+            Item {
+                id: gameCanvas
+                property int boardLineWidth: 2
+                property int blockSize: (parent.width - 3*boardLineWidth)/3
+                property string message: "Use \"New\" in the pull-down"
+                width: parent.width
+                height: parent.width
+
+                Item {
+                    id: background
+                    anchors.fill: parent
+                }
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: TTTM.currentGame.handleClick(mouse.x, mouse.y)
+                }
+            }
+
+
             Label {
                 x: Theme.paddingLarge
-                text: "Hello Sailors"
-                color: Theme.secondaryHighlightColor
-                font.pixelSize: Theme.fontSizeExtraLarge
+                text: gameCanvas.message
             }
         }
     }

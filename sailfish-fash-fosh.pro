@@ -19,7 +19,9 @@ OTHER_FILES += qml/sailfish-fash-fosh.qml \
     qml/pages/SecondPage.qml \
     rpm/sailfish-fash-fosh.spec \
     rpm/sailfish-fash-fosh.yaml \
-    sailfish-fash-fosh.desktop
+    sailfish-fash-fosh.desktop \
+    qml/tictactoemodel.js \
+    qml/Space.qml
 
 HEADERS += \
     src/tictactoeboard.h
