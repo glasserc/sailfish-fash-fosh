@@ -9,5 +9,6 @@ http://qt-project.org/doc/qt-5/qtquick-tutorials-samegame-samegame1-example.html
 http://qt-project.org/doc/qt-4.8/qml-anchor-layout.html
 http://thpmaemo.blogspot.com/2013/03/porting-harmattan-apps-to-sailfish.html
 http://qt-project.org/doc/qt-5/gettingstartedqml.html
+https://lists.sailfishos.org/pipermail/devel/2013-April/000133.html
 
 I still know approximately zero about Qt and even less about Sailfish, so feedback heartily solicited.

@@ -10,13 +10,11 @@ TARGET = sailfish-fash-fosh
 
 CONFIG += sailfishapp
 
-SOURCES += src/sailfish-fash-fosh.cpp \
-    src/tictactoeboard.cpp
+SOURCES += src/sailfish-fash-fosh.cpp
 
 OTHER_FILES += qml/sailfish-fash-fosh.qml \
     qml/cover/CoverPage.qml \
     qml/pages/FirstPage.qml \
-    qml/pages/SecondPage.qml \
     rpm/sailfish-fash-fosh.spec \
     rpm/sailfish-fash-fosh.yaml \
     sailfish-fash-fosh.desktop \
@@ -24,7 +22,4 @@ OTHER_FILES += qml/sailfish-fash-fosh.qml \
     qml/Space.qml \
     qml/TicTacToeBoard.qml \
     README.rst
-
-HEADERS += \
-    src/tictactoeboard.h
 
