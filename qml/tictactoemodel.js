@@ -104,7 +104,8 @@ var newGame = function(){
             // Can't go there. Throw an exception?
             if (this.valueAt(row, col))
                 return;
-            state.boardSpaces[row][col].state = state.currentPlayer;
+            var space = state.boardSpaces[row][col];
+            space.state = state.currentPlayer;
             if (state.currentPlayer == 'O')
                 state.currentPlayer = 'X';
             else
