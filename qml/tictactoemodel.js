@@ -75,22 +75,22 @@ var newGame = function(){
         },
         gameStatus: function() {
             var valueAt = this.valueAt;
-            for (var row = 0; row < 3; row++) {
-                if(valueAt(row, 0) && valueAt(row, 0) === valueAt(row, 1) && valueAt(row, 1) === valueAt(row, 2)) {
-                    return {state: 'won', winner: valueAt(row, 0)};
+            var checkWinner = function(x1, y1, x2, y2, x3, y3) {
+                if(valueAt(x1, y1) && valueAt(x1, y1) === valueAt(x2, y2) && valueAt(x2, y2) === valueAt(x3, y3)) {
+                    return {state: 'won', winner: valueAt(x1, y1)};
                 }
+                return null;
+            };
+            var winner = null;
+
+            for (var row = 0; row < 3; row++) {
+                winner = winner || checkWinner(row, 0, row, 1, row, 2);
             }
             for (var col = 0; col < 3; col++) {
-                if(valueAt(0, col) && valueAt(0, col) === valueAt(1, col) && valueAt(1, col) === valueAt(2, col)) {
-                    return {state: 'won', winner: valueAt(0, col)};
-                }
+                winner = winner || checkWinner(0, col, 1, col, 2, col);
             }
-            if(valueAt(0, 0) && valueAt(0, 0) === valueAt(1, 1) && valueAt(1, 1) === valueAt(2, 2)) {
-                return {state: 'won', winner: valueAt(0, 0)};
-            }
-            if(valueAt(0, 2) && valueAt(0, 2) === valueAt(1, 1) && valueAt(1, 1) === valueAt(2, 0)) {
-                return {state: 'won', winner: valueAt(0, 2)};
-            }
+            winner = winner || checkWinner(0, 0, 1, 1, 2, 2) || checkWinner(0, 2, 1, 1, 2, 0);
+            if (winner) return winner;
             for (var row = 0; row < 3; row++) {
                 for (var col = 0; col < 3; col++) {
                     if(! valueAt(row, col))
